@@ -1,10 +1,12 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post, Put, Query } from '@nestjs/common';
 import { CreateMovieDto } from './dto/create-movie.dto';
+import { UpdateMovieDto } from './dto/update-movie.dto';
 import { Movie } from './entities/movie.entity';
 import { MoviesService } from './movies.service';
 
 @Controller('movies')
 export class MoviesController {
+    // moviesService : property (+타입지정)
     constructor(private readonly moviesService: MoviesService) {}
     @Get()
     getAll(): Movie[] {
@@ -34,7 +36,7 @@ export class MoviesController {
 
     //update (put: 모든 리소스 업데이트 / patch: 일부 리소스 업데이트)
     @Patch(':id')
-    path(@Param('id') movieId: number, @Body() updateData ){
+    path(@Param('id') movieId: number, @Body() updateData: UpdateMovieDto ){
         return this.moviesService.update(movieId, updateData);
     }
 

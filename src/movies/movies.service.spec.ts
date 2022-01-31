@@ -9,7 +9,7 @@ import { execPath } from 'process';
 describe('MoviesService', () => {
   let service: MoviesService;
 
-  // test 하기 전에 실행
+  // test 하기 전에 실행 (hook)
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [MoviesService],
@@ -17,6 +17,11 @@ describe('MoviesService', () => {
 
     service = module.get<MoviesService>(MoviesService);
   });
+
+  // test 후 실행 (hook)
+  afterAll(()=>{
+    //db 지워주는 함수 etc..
+  })
 
   //should be defined : test name
   it('should be defined', () => {

@@ -1,8 +1,5 @@
-import {IsNumber, IsString} from 'class-validator';
-
 import { CreateMovieDto } from './create-movie.dto';
 import { PartialType } from '@nestjs/mapped-types';
-import { fromEventPattern } from 'rxjs';
 
 //클래스의 유효성 검사 (validator로)
 // 받을 데이터 타입

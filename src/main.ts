@@ -27,3 +27,8 @@ bootstrap();
 
 //express 위에서 돌아감 (req, res 쓸수 있음) -> 비추
 //fastify에서도 돌아감 (express와 비슷 but 빠름)
+
+//test
+//1. unit test : function 단위로 test
+//2. e2e test : 시스템 단위로 test (어떤 페이지에 들어가면 어떤 화면이 보여야 한다!)
+//  Jest 이용 : js testing framework
